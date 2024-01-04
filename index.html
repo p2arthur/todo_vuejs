@@ -30,15 +30,14 @@
         <h3>To-do List</h3>
 
         <div class="all-todos">
-          <!-- <div class="single-todo done">
-            <p>Learn the basics of Vue JS</p>
-          </div> -->
-          <div
-            v-for="todo in todo_list"
-            class="single-todo"
-            @click="toggleTodo(todo)"
-            :class="{done: todo.done}">
-            <p>{{todo.text}}</p>
+
+            <p
+              v-for="todo in todo_list"
+              class="single-todo"
+              @click="toggleTodo(todo)"
+              :class="{done: todo.done}">
+              {{todo.text}}
+            </p>
           </div>
         </div>
 
@@ -51,7 +50,7 @@
         <input
           type="text"
           placeholder="Add new to-do"
-          v-model="newTodo.text" />
+           v-model="newTodo.text" /> 
         <button
           @click="addTodo()"
           class="add">
