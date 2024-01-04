@@ -18,6 +18,10 @@ const todoApp = {
   beforeUpdate() {
     console.log('before update');
   },
+
+  updated() {
+    localStorage.setItem('todo_list', JSON.stringify(this.todo_list));
+  },
   //----------------------------------------------------------------------------
   methods: {
     addTodo: function () {
@@ -39,6 +43,7 @@ const todoApp = {
 
     removeAllTodos: function () {
       this.todo_list = [];
+      localStorage.removeItem('todo_list');
     },
   },
 };
